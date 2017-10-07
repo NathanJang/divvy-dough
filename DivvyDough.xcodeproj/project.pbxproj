@@ -8,20 +8,38 @@
 
 /* Begin PBXBuildFile section */
 		AB185A7A1F88F73700CE07F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB185A791F88F73700CE07F7 /* AppDelegate.swift */; };
-		AB185A7C1F88F73700CE07F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB185A7B1F88F73700CE07F7 /* ViewController.swift */; };
 		AB185A7F1F88F73700CE07F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB185A7D1F88F73700CE07F7 /* Main.storyboard */; };
 		AB185A811F88F73700CE07F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB185A801F88F73700CE07F7 /* Assets.xcassets */; };
 		AB185A841F88F73700CE07F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB185A821F88F73700CE07F7 /* LaunchScreen.storyboard */; };
+		AB185A8D1F8965E000CE07F7 /* TripsOverviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB185A8C1F8965E000CE07F7 /* TripsOverviewTableViewCell.xib */; };
+		AB185A901F89660A00CE07F7 /* TripsOverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB185A8F1F89660A00CE07F7 /* TripsOverviewTableViewCell.swift */; };
+		AB185A931F8967A300CE07F7 /* TripsOverviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB185A921F8967A300CE07F7 /* TripsOverviewTableViewController.swift */; };
+		AB9F7BAE1F896D7E00775EBB /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9F7BAD1F896D7E00775EBB /* UITableViewExtensions.swift */; };
+		AB9F7BB01F896FF100775EBB /* TripDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9F7BAF1F896FF100775EBB /* TripDetailsTableViewController.swift */; };
+		AB9F7BB31F89705A00775EBB /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9F7BB11F89705A00775EBB /* UserTableViewCell.swift */; };
+		AB9F7BB41F89705A00775EBB /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB9F7BB21F89705A00775EBB /* UserTableViewCell.xib */; };
+		AB9F7BBB1F897E9800775EBB /* TransactionOverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9F7BB91F897E9800775EBB /* TransactionOverviewTableViewCell.swift */; };
+		AB9F7BBC1F897E9800775EBB /* TransactionOverviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB9F7BBA1F897E9800775EBB /* TransactionOverviewTableViewCell.xib */; };
+		AB9F7BBE1F89873C00775EBB /* GroupMembersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9F7BBD1F89873C00775EBB /* GroupMembersTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AB185A761F88F73700CE07F7 /* DivvyDough.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DivvyDough.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB185A791F88F73700CE07F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AB185A7B1F88F73700CE07F7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AB185A7E1F88F73700CE07F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AB185A801F88F73700CE07F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB185A831F88F73700CE07F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB185A851F88F73700CE07F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB185A8C1F8965E000CE07F7 /* TripsOverviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripsOverviewTableViewCell.xib; sourceTree = "<group>"; };
+		AB185A8F1F89660A00CE07F7 /* TripsOverviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsOverviewTableViewCell.swift; sourceTree = "<group>"; };
+		AB185A921F8967A300CE07F7 /* TripsOverviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsOverviewTableViewController.swift; sourceTree = "<group>"; };
+		AB9F7BAD1F896D7E00775EBB /* UITableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
+		AB9F7BAF1F896FF100775EBB /* TripDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailsTableViewController.swift; sourceTree = "<group>"; };
+		AB9F7BB11F89705A00775EBB /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		AB9F7BB21F89705A00775EBB /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
+		AB9F7BB91F897E9800775EBB /* TransactionOverviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionOverviewTableViewCell.swift; sourceTree = "<group>"; };
+		AB9F7BBA1F897E9800775EBB /* TransactionOverviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionOverviewTableViewCell.xib; sourceTree = "<group>"; };
+		AB9F7BBD1F89873C00775EBB /* GroupMembersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMembersTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +73,54 @@
 			isa = PBXGroup;
 			children = (
 				AB185A791F88F73700CE07F7 /* AppDelegate.swift */,
-				AB185A7B1F88F73700CE07F7 /* ViewController.swift */,
 				AB185A7D1F88F73700CE07F7 /* Main.storyboard */,
+				AB185A911F89676E00CE07F7 /* View Controllers */,
+				AB185A8E1F8965F800CE07F7 /* Views */,
+				AB185A8B1F89659300CE07F7 /* Nibs */,
+				AB9F7BAC1F896D6300775EBB /* Util */,
 				AB185A801F88F73700CE07F7 /* Assets.xcassets */,
 				AB185A821F88F73700CE07F7 /* LaunchScreen.storyboard */,
 				AB185A851F88F73700CE07F7 /* Info.plist */,
 			);
 			path = DivvyDough;
+			sourceTree = "<group>";
+		};
+		AB185A8B1F89659300CE07F7 /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+				AB185A8C1F8965E000CE07F7 /* TripsOverviewTableViewCell.xib */,
+				AB9F7BB21F89705A00775EBB /* UserTableViewCell.xib */,
+				AB9F7BBA1F897E9800775EBB /* TransactionOverviewTableViewCell.xib */,
+			);
+			path = Nibs;
+			sourceTree = "<group>";
+		};
+		AB185A8E1F8965F800CE07F7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AB185A8F1F89660A00CE07F7 /* TripsOverviewTableViewCell.swift */,
+				AB9F7BB11F89705A00775EBB /* UserTableViewCell.swift */,
+				AB9F7BB91F897E9800775EBB /* TransactionOverviewTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AB185A911F89676E00CE07F7 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AB185A921F8967A300CE07F7 /* TripsOverviewTableViewController.swift */,
+				AB9F7BAF1F896FF100775EBB /* TripDetailsTableViewController.swift */,
+				AB9F7BBD1F89873C00775EBB /* GroupMembersTableViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		AB9F7BAC1F896D6300775EBB /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				AB9F7BAD1F896D7E00775EBB /* UITableViewExtensions.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +185,9 @@
 				AB185A841F88F73700CE07F7 /* LaunchScreen.storyboard in Resources */,
 				AB185A811F88F73700CE07F7 /* Assets.xcassets in Resources */,
 				AB185A7F1F88F73700CE07F7 /* Main.storyboard in Resources */,
+				AB185A8D1F8965E000CE07F7 /* TripsOverviewTableViewCell.xib in Resources */,
+				AB9F7BB41F89705A00775EBB /* UserTableViewCell.xib in Resources */,
+				AB9F7BBC1F897E9800775EBB /* TransactionOverviewTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,8 +198,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB185A7C1F88F73700CE07F7 /* ViewController.swift in Sources */,
+				AB185A931F8967A300CE07F7 /* TripsOverviewTableViewController.swift in Sources */,
+				AB9F7BAE1F896D7E00775EBB /* UITableViewExtensions.swift in Sources */,
 				AB185A7A1F88F73700CE07F7 /* AppDelegate.swift in Sources */,
+				AB185A901F89660A00CE07F7 /* TripsOverviewTableViewCell.swift in Sources */,
+				AB9F7BB31F89705A00775EBB /* UserTableViewCell.swift in Sources */,
+				AB9F7BB01F896FF100775EBB /* TripDetailsTableViewController.swift in Sources */,
+				AB9F7BBB1F897E9800775EBB /* TransactionOverviewTableViewCell.swift in Sources */,
+				AB9F7BBE1F89873C00775EBB /* GroupMembersTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +345,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 449QPF5U38;
 				INFOPLIST_FILE = DivvyDough/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.jonathanchan.DivvyDough;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -292,6 +361,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 449QPF5U38;
 				INFOPLIST_FILE = DivvyDough/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.jonathanchan.DivvyDough;
 				PRODUCT_NAME = "$(TARGET_NAME)";

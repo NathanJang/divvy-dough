@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="100" id="Snb-vj-rjv" customClass="TripsOverviewTableViewCell" customModule="DivvyDough" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="Snb-vj-rjv" id="ZZ6-bq-MUl">
+                <rect key="frame" x="0.0" y="0.0" width="341" height="99.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Berkeley" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIg-XJ-0Qg">
+                        <rect key="frame" x="12" y="12" width="90" height="27"/>
+                        <viewLayoutGuide key="safeArea" id="5fV-JR-djF"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="With Daniel Zhu &amp; 2 others" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0e-sG-ZCl">
+                        <rect key="frame" x="12" y="43" width="206" height="21"/>
+                        <viewLayoutGuide key="safeArea" id="0d2-P2-9q8"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="October 6 – 9" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9CT-fF-TEr">
+                        <rect key="frame" x="12" y="64" width="105" height="21"/>
+                        <viewLayoutGuide key="safeArea" id="zcp-fH-5pf"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$900.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0qs-6s-yat">
+                        <rect key="frame" x="254" y="36" width="87.5" height="27"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="I0e-sG-ZCl" firstAttribute="centerY" secondItem="ZZ6-bq-MUl" secondAttribute="centerY" constant="4" id="JU8-kL-qNS"/>
+                    <constraint firstItem="I0e-sG-ZCl" firstAttribute="leading" secondItem="xIg-XJ-0Qg" secondAttribute="leading" id="Qwl-3C-yRD"/>
+                    <constraint firstItem="0qs-6s-yat" firstAttribute="centerY" secondItem="ZZ6-bq-MUl" secondAttribute="centerY" id="XVs-iX-fgk"/>
+                    <constraint firstItem="I0e-sG-ZCl" firstAttribute="top" secondItem="xIg-XJ-0Qg" secondAttribute="bottom" constant="4" id="hOS-Eu-8ES"/>
+                    <constraint firstItem="9CT-fF-TEr" firstAttribute="leading" secondItem="I0e-sG-ZCl" secondAttribute="leading" id="ies-YJ-nz0"/>
+                    <constraint firstItem="9CT-fF-TEr" firstAttribute="top" secondItem="I0e-sG-ZCl" secondAttribute="bottom" id="jpm-DO-Ybx"/>
+                    <constraint firstItem="xIg-XJ-0Qg" firstAttribute="leading" secondItem="ZZ6-bq-MUl" secondAttribute="leadingMargin" constant="4" id="lJC-0S-MEe"/>
+                </constraints>
+            </tableViewCellContentView>
+            <constraints>
+                <constraint firstItem="ZZ6-bq-MUl" firstAttribute="trailing" secondItem="0qs-6s-yat" secondAttribute="trailing" constant="0.5" id="Tpe-ir-v1n"/>
+            </constraints>
+            <connections>
+                <outlet property="balanceLabel" destination="0qs-6s-yat" id="U2U-c9-IG2"/>
+                <outlet property="dateRangeLabel" destination="9CT-fF-TEr" id="IKe-1z-gda"/>
+                <outlet property="groupMembersLabel" destination="I0e-sG-ZCl" id="J07-v7-lTi"/>
+                <outlet property="tripNameLabel" destination="xIg-XJ-0Qg" id="Aac-Lt-BgN"/>
+            </connections>
+            <point key="canvasLocation" x="79" y="-20"/>
+        </tableViewCell>
+    </objects>
+</document>
