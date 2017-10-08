@@ -1,4 +1,7 @@
 # DivvyDough
+
+![](DivvyDough/Assets.xcassets/AppIcon.appiconset/DivvyDoughIcon copy.png)
+
 ## Inspiration
 Let's say you're travelling with a group of friends.
 
@@ -15,7 +18,7 @@ DivvyDough is an app that lets you avoid all this by essentially having everyone
 2. **Have your friends transfer you the budgeted amount before the trip starts.** As group leader, you will have access to the group's funds, and there will be no need to chase people down. These funds will be transferred directly to your bank account.
 3. **When it's time to group-spend, cover it for the group.** You will have enough in your account unless you are severely over-budget.
 4. **Charge your friends on DivvyDough.** Mark the group spending in the app, and your friends will be notified of the charge.
-5. **Refund any unspent balance.** Unless your group is over-budget, you will still hold some of your friends' funds at the end of the trip. Refund it back to their bank accounts when the trip is finished.
+5. **Refund any unspent balance at the end of the trip.** Unless your group is over-budget, you will still hold some of your friends' funds at the end of the trip. Refund it back to their bank accounts when the trip is finished.
 
 ## How we built it
 We built DivvyDough for iOS in Swift to take full advantage of the OS's features. Our backend is built with Express.js in Node.
