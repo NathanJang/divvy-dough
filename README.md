@@ -1,4 +1,4 @@
-#DivvyDough
+# DivvyDough
 ## Inspiration
 Let's say you're travelling with a group of friends.
 
