@@ -54,16 +54,18 @@ class NewChargeTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath == IndexPath(row: 0, section: 1) {
             tableView.deselectRow(at: indexPath, animated: true)
-            leaderCharge(tripId: selectedTrip.id, description: descriptionTextField.text!, amount: Float(amountTextField.text!)! / Float(selectedTrip.memberNames.count)) { [unowned self] error in
-                guard error == nil else {
-                    DispatchQueue.main.async { [unowned self] in
-                        self.presentAlert(message: "Could not charge.")
+            if let description = descriptionTextField.text, let amountString = amountTextField.text, let amount = Float(amountString) {
+                leaderCharge(tripId: selectedTrip.id, description: description, amount: amount / Float(selectedTrip.memberNames.count)) { [unowned self] error in
+                    guard error == nil else {
+                        DispatchQueue.main.async { [unowned self] in
+                            self.presentAlert(message: "Could not charge.")
+                        }
+                        return
                     }
-                    return
-                }
 
-                DispatchQueue.main.async { [unowned self] in
-                    self.navigationController?.dismiss(animated: true, completion: nil)
+                    DispatchQueue.main.async { [unowned self] in
+                        self.navigationController?.dismiss(animated: true, completion: nil)
+                    }
                 }
             }
         }

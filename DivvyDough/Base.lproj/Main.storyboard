@@ -339,7 +339,7 @@
         <scene sceneID="LYY-zq-3iW">
             <objects>
                 <navigationController id="eWA-7Z-0Kj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Trips" id="7Nl-DF-jCh"/>
+                    <tabBarItem key="tabBarItem" title="Trips" image="Briefcase" selectedImage="BriefcaseFIlled" id="7Nl-DF-jCh"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="kjY-e3-jdF">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -353,4 +353,8 @@
             <point key="canvasLocation" x="927" y="338"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Briefcase" width="30" height="30"/>
+        <image name="BriefcaseFIlled" width="30" height="30"/>
+    </resources>
 </document>
