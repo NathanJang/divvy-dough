@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -26,20 +27,22 @@
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UserIcon" translatesAutoresizingMaskIntoConstraints="NO" id="sdJ-ZY-5nq">
                         <rect key="frame" x="12" y="25" width="50" height="50"/>
+                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="50" id="2Iy-qo-YEn"/>
                             <constraint firstAttribute="height" constant="50" id="BgH-oa-iSL"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$900.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2S-we-OXC">
-                        <rect key="frame" x="238" y="39" width="66" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="$900.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2S-we-OXC">
+                        <rect key="frame" x="208.5" y="35" width="95.5" height="29"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="sdJ-ZY-5nq" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Bp6-As-BhH"/>
+                    <constraint firstItem="a2S-we-OXC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="CZG-Ri-50l" secondAttribute="trailing" constant="4" id="Wp2-pA-7I1"/>
                     <constraint firstItem="CZG-Ri-50l" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="gPV-Wq-XFb"/>
                     <constraint firstItem="CZG-Ri-50l" firstAttribute="leading" secondItem="sdJ-ZY-5nq" secondAttribute="trailing" constant="12" id="goI-6V-vN4"/>
                     <constraint firstItem="sdJ-ZY-5nq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="4" id="j2P-GA-DU3"/>
@@ -49,6 +52,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="balanceLabel" destination="a2S-we-OXC" id="TeO-Js-XsX"/>
+                <outlet property="iconImageView" destination="sdJ-ZY-5nq" id="aLC-uJ-XIf"/>
                 <outlet property="nameLabel" destination="CZG-Ri-50l" id="SWk-k3-ojd"/>
             </connections>
         </tableViewCell>

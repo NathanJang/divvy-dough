@@ -10,6 +10,7 @@ import UIKit
 
 class UserTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var balanceLabel: UILabel!
 
@@ -17,6 +18,7 @@ class UserTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         balanceLabel.textColor = .green
+        iconImageView.image = iconImageView.image?.withRenderingMode(.alwaysTemplate)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

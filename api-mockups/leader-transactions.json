@@ -1,0 +1,21 @@
+{
+	"transactions": [
+		{
+			// by default, all transactions are to the group leader
+			"id": 1,
+			"name": "Aloha Poke",
+			"sub_transactions": [
+				{
+					"from": "Jonathan Chan",
+					"amount": 2.53
+				},
+				{
+					"from": "Youngeon Kim",
+					"amount": 3.59
+				}
+			],
+			"total": 6.13
+		},
+		// ...
+	]
+}

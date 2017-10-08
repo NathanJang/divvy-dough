@@ -26,7 +26,7 @@ class TripDetailsTableViewController: UITableViewController {
         tableView.register(UINib(nibName: "UserTableViewCell", bundle: nil), forCellReuseIdentifier: "UserTableViewCell")
         tableView.register(UINib(nibName: "TransactionOverviewTableViewCell", bundle: nil), forCellReuseIdentifier: "TransactionOverviewTableViewCell")
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Details", style: .plain, target: self, action: #selector(didTapDetailsButton))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Others", style: .plain, target: self, action: #selector(didTapDetailsButton))
     }
 
     override func didReceiveMemoryWarning() {

@@ -1,0 +1,10 @@
+{
+	"transactions": [
+		{
+			// by default, all transactions are to the group leader
+			"name": "Aloha Poke",
+			"amount": 2.55,
+			"time": ""
+		}
+	]
+}

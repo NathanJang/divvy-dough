@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -20,27 +21,27 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Berkeley" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIg-XJ-0Qg">
-                        <rect key="frame" x="12" y="12" width="90" height="27"/>
+                        <rect key="frame" x="12" y="13.5" width="90" height="27"/>
                         <viewLayoutGuide key="safeArea" id="5fV-JR-djF"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="With Daniel Zhu &amp; 2 others" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0e-sG-ZCl">
-                        <rect key="frame" x="12" y="43" width="206" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="With Daniel Xinyuan Zhu &amp; 2 others" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0e-sG-ZCl">
+                        <rect key="frame" x="12" y="44.5" width="238" height="21"/>
                         <viewLayoutGuide key="safeArea" id="0d2-P2-9q8"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="October 6 – 9" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9CT-fF-TEr">
-                        <rect key="frame" x="12" y="64" width="105" height="21"/>
+                        <rect key="frame" x="12" y="65.5" width="105" height="21"/>
                         <viewLayoutGuide key="safeArea" id="zcp-fH-5pf"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$900.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0qs-6s-yat">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="$900.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0qs-6s-yat">
                         <rect key="frame" x="254" y="36" width="87.5" height="27"/>
                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                         <nil key="textColor"/>
@@ -48,9 +49,12 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="I0e-sG-ZCl" firstAttribute="centerY" secondItem="ZZ6-bq-MUl" secondAttribute="centerY" constant="4" id="JU8-kL-qNS"/>
+                    <constraint firstItem="0qs-6s-yat" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="xIg-XJ-0Qg" secondAttribute="trailing" constant="4" id="FFY-Yj-w6n"/>
+                    <constraint firstItem="I0e-sG-ZCl" firstAttribute="centerY" secondItem="ZZ6-bq-MUl" secondAttribute="centerY" constant="5" id="JU8-kL-qNS"/>
                     <constraint firstItem="I0e-sG-ZCl" firstAttribute="leading" secondItem="xIg-XJ-0Qg" secondAttribute="leading" id="Qwl-3C-yRD"/>
                     <constraint firstItem="0qs-6s-yat" firstAttribute="centerY" secondItem="ZZ6-bq-MUl" secondAttribute="centerY" id="XVs-iX-fgk"/>
+                    <constraint firstItem="0qs-6s-yat" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9CT-fF-TEr" secondAttribute="trailing" constant="4" id="Xlu-Ot-0VZ"/>
+                    <constraint firstItem="0qs-6s-yat" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="I0e-sG-ZCl" secondAttribute="trailing" constant="4" id="cRX-wS-P3e"/>
                     <constraint firstItem="I0e-sG-ZCl" firstAttribute="top" secondItem="xIg-XJ-0Qg" secondAttribute="bottom" constant="4" id="hOS-Eu-8ES"/>
                     <constraint firstItem="9CT-fF-TEr" firstAttribute="leading" secondItem="I0e-sG-ZCl" secondAttribute="leading" id="ies-YJ-nz0"/>
                     <constraint firstItem="9CT-fF-TEr" firstAttribute="top" secondItem="I0e-sG-ZCl" secondAttribute="bottom" id="jpm-DO-Ybx"/>

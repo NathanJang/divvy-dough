@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8929EBD61062967AD2B2C938 /* Pods_libDivvyDough.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 537F049218CE85FBE36CB8D9 /* Pods_libDivvyDough.framework */; };
 		AB185A7A1F88F73700CE07F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB185A791F88F73700CE07F7 /* AppDelegate.swift */; };
 		AB185A7F1F88F73700CE07F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB185A7D1F88F73700CE07F7 /* Main.storyboard */; };
 		AB185A811F88F73700CE07F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB185A801F88F73700CE07F7 /* Assets.xcassets */; };
@@ -14,6 +15,16 @@
 		AB185A8D1F8965E000CE07F7 /* TripsOverviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB185A8C1F8965E000CE07F7 /* TripsOverviewTableViewCell.xib */; };
 		AB185A901F89660A00CE07F7 /* TripsOverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB185A8F1F89660A00CE07F7 /* TripsOverviewTableViewCell.swift */; };
 		AB185A931F8967A300CE07F7 /* TripsOverviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB185A921F8967A300CE07F7 /* TripsOverviewTableViewController.swift */; };
+		AB817A2F1F898A79001A3D2D /* libDivvyDough.h in Headers */ = {isa = PBXBuildFile; fileRef = AB817A2D1F898A79001A3D2D /* libDivvyDough.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AB817A321F898A79001A3D2D /* libDivvyDough.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB817A2B1F898A78001A3D2D /* libDivvyDough.framework */; };
+		AB817A331F898A79001A3D2D /* libDivvyDough.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AB817A2B1F898A78001A3D2D /* libDivvyDough.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AB817A391F898A86001A3D2D /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB817A381F898A86001A3D2D /* Trip.swift */; };
+		AB817A3B1F89B27F001A3D2D /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB817A3A1F89B27F001A3D2D /* Networking.swift */; };
+		AB817A431F89D922001A3D2D /* libDivvyDoughTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB817A421F89D922001A3D2D /* libDivvyDoughTests.swift */; };
+		AB817A451F89D922001A3D2D /* libDivvyDough.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB817A2B1F898A78001A3D2D /* libDivvyDough.framework */; };
+		AB817A4E1F89F8FC001A3D2D /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB817A4D1F89F8FC001A3D2D /* Globals.swift */; };
+		AB817A501F89FA19001A3D2D /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB817A4F1F89FA19001A3D2D /* UIViewControllerExtensions.swift */; };
+		AB817A521F89FB9C001A3D2D /* FloatExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB817A511F89FB9C001A3D2D /* FloatExtensions.swift */; };
 		AB9F7BAE1F896D7E00775EBB /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9F7BAD1F896D7E00775EBB /* UITableViewExtensions.swift */; };
 		AB9F7BB01F896FF100775EBB /* TripDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9F7BAF1F896FF100775EBB /* TripDetailsTableViewController.swift */; };
 		AB9F7BB31F89705A00775EBB /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9F7BB11F89705A00775EBB /* UserTableViewCell.swift */; };
@@ -21,9 +32,52 @@
 		AB9F7BBB1F897E9800775EBB /* TransactionOverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9F7BB91F897E9800775EBB /* TransactionOverviewTableViewCell.swift */; };
 		AB9F7BBC1F897E9800775EBB /* TransactionOverviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB9F7BBA1F897E9800775EBB /* TransactionOverviewTableViewCell.xib */; };
 		AB9F7BBE1F89873C00775EBB /* GroupMembersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9F7BBD1F89873C00775EBB /* GroupMembersTableViewController.swift */; };
+		E829D76B5341AF8DD21B90B3 /* Pods_DivvyDough.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 328BB682D43D6FD6F1F1F169 /* Pods_DivvyDough.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		AB817A301F898A79001A3D2D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AB185A6E1F88F73700CE07F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AB817A2A1F898A78001A3D2D;
+			remoteInfo = libDivvyDough;
+		};
+		AB817A461F89D922001A3D2D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AB185A6E1F88F73700CE07F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AB817A2A1F898A78001A3D2D;
+			remoteInfo = libDivvyDough;
+		};
+		AB817A4B1F89DA44001A3D2D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AB185A6E1F88F73700CE07F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AB185A751F88F73700CE07F7;
+			remoteInfo = DivvyDough;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AB817A371F898A79001A3D2D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				AB817A331F898A79001A3D2D /* libDivvyDough.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0EC4828E8D70BEFD5EC4F035 /* Pods-libDivvyDough.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-libDivvyDough.release.xcconfig"; path = "Pods/Target Support Files/Pods-libDivvyDough/Pods-libDivvyDough.release.xcconfig"; sourceTree = "<group>"; };
+		328BB682D43D6FD6F1F1F169 /* Pods_DivvyDough.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DivvyDough.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AEC064B670DFB0260C262EC /* Pods-DivvyDough.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DivvyDough.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DivvyDough/Pods-DivvyDough.debug.xcconfig"; sourceTree = "<group>"; };
+		537F049218CE85FBE36CB8D9 /* Pods_libDivvyDough.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_libDivvyDough.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB185A761F88F73700CE07F7 /* DivvyDough.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DivvyDough.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB185A791F88F73700CE07F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB185A7E1F88F73700CE07F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -33,6 +87,17 @@
 		AB185A8C1F8965E000CE07F7 /* TripsOverviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripsOverviewTableViewCell.xib; sourceTree = "<group>"; };
 		AB185A8F1F89660A00CE07F7 /* TripsOverviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsOverviewTableViewCell.swift; sourceTree = "<group>"; };
 		AB185A921F8967A300CE07F7 /* TripsOverviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsOverviewTableViewController.swift; sourceTree = "<group>"; };
+		AB817A2B1F898A78001A3D2D /* libDivvyDough.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = libDivvyDough.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB817A2D1F898A79001A3D2D /* libDivvyDough.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libDivvyDough.h; sourceTree = "<group>"; };
+		AB817A2E1F898A79001A3D2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB817A381F898A86001A3D2D /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		AB817A3A1F89B27F001A3D2D /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		AB817A401F89D922001A3D2D /* libDivvyDoughTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = libDivvyDoughTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB817A421F89D922001A3D2D /* libDivvyDoughTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = libDivvyDoughTests.swift; sourceTree = "<group>"; };
+		AB817A441F89D922001A3D2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB817A4D1F89F8FC001A3D2D /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		AB817A4F1F89FA19001A3D2D /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		AB817A511F89FB9C001A3D2D /* FloatExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatExtensions.swift; sourceTree = "<group>"; };
 		AB9F7BAD1F896D7E00775EBB /* UITableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
 		AB9F7BAF1F896FF100775EBB /* TripDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailsTableViewController.swift; sourceTree = "<group>"; };
 		AB9F7BB11F89705A00775EBB /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
@@ -40,6 +105,8 @@
 		AB9F7BB91F897E9800775EBB /* TransactionOverviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionOverviewTableViewCell.swift; sourceTree = "<group>"; };
 		AB9F7BBA1F897E9800775EBB /* TransactionOverviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionOverviewTableViewCell.xib; sourceTree = "<group>"; };
 		AB9F7BBD1F89873C00775EBB /* GroupMembersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMembersTableViewController.swift; sourceTree = "<group>"; };
+		B4AC838D49080BCED5BA65BF /* Pods-DivvyDough.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DivvyDough.release.xcconfig"; path = "Pods/Target Support Files/Pods-DivvyDough/Pods-DivvyDough.release.xcconfig"; sourceTree = "<group>"; };
+		F1333A0AE0D47139D84D7452 /* Pods-libDivvyDough.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-libDivvyDough.debug.xcconfig"; path = "Pods/Target Support Files/Pods-libDivvyDough/Pods-libDivvyDough.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,17 +114,50 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB817A321F898A79001A3D2D /* libDivvyDough.framework in Frameworks */,
+				E829D76B5341AF8DD21B90B3 /* Pods_DivvyDough.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB817A271F898A78001A3D2D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8929EBD61062967AD2B2C938 /* Pods_libDivvyDough.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB817A3D1F89D922001A3D2D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB817A451F89D922001A3D2D /* libDivvyDough.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B5D38C44BFF277C59763E38 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3AEC064B670DFB0260C262EC /* Pods-DivvyDough.debug.xcconfig */,
+				B4AC838D49080BCED5BA65BF /* Pods-DivvyDough.release.xcconfig */,
+				F1333A0AE0D47139D84D7452 /* Pods-libDivvyDough.debug.xcconfig */,
+				0EC4828E8D70BEFD5EC4F035 /* Pods-libDivvyDough.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		AB185A6D1F88F73700CE07F7 = {
 			isa = PBXGroup;
 			children = (
 				AB185A781F88F73700CE07F7 /* DivvyDough */,
+				AB817A2C1F898A79001A3D2D /* libDivvyDough */,
+				AB817A411F89D922001A3D2D /* libDivvyDoughTests */,
 				AB185A771F88F73700CE07F7 /* Products */,
+				9B5D38C44BFF277C59763E38 /* Pods */,
+				B3C49386FFE33D65E0C3CA62 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,6 +165,8 @@
 			isa = PBXGroup;
 			children = (
 				AB185A761F88F73700CE07F7 /* DivvyDough.app */,
+				AB817A2B1F898A78001A3D2D /* libDivvyDough.framework */,
+				AB817A401F89D922001A3D2D /* libDivvyDoughTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -115,33 +217,120 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
+		AB817A2C1F898A79001A3D2D /* libDivvyDough */ = {
+			isa = PBXGroup;
+			children = (
+				AB817A2D1F898A79001A3D2D /* libDivvyDough.h */,
+				AB817A2E1F898A79001A3D2D /* Info.plist */,
+				AB817A381F898A86001A3D2D /* Trip.swift */,
+				AB817A3A1F89B27F001A3D2D /* Networking.swift */,
+				AB817A4D1F89F8FC001A3D2D /* Globals.swift */,
+			);
+			path = libDivvyDough;
+			sourceTree = "<group>";
+		};
+		AB817A411F89D922001A3D2D /* libDivvyDoughTests */ = {
+			isa = PBXGroup;
+			children = (
+				AB817A421F89D922001A3D2D /* libDivvyDoughTests.swift */,
+				AB817A441F89D922001A3D2D /* Info.plist */,
+			);
+			path = libDivvyDoughTests;
+			sourceTree = "<group>";
+		};
 		AB9F7BAC1F896D6300775EBB /* Util */ = {
 			isa = PBXGroup;
 			children = (
 				AB9F7BAD1F896D7E00775EBB /* UITableViewExtensions.swift */,
+				AB817A4F1F89FA19001A3D2D /* UIViewControllerExtensions.swift */,
+				AB817A511F89FB9C001A3D2D /* FloatExtensions.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
 		};
+		B3C49386FFE33D65E0C3CA62 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				328BB682D43D6FD6F1F1F169 /* Pods_DivvyDough.framework */,
+				537F049218CE85FBE36CB8D9 /* Pods_libDivvyDough.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		AB817A281F898A78001A3D2D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB817A2F1F898A79001A3D2D /* libDivvyDough.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		AB185A751F88F73700CE07F7 /* DivvyDough */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB185A881F88F73700CE07F7 /* Build configuration list for PBXNativeTarget "DivvyDough" */;
 			buildPhases = (
+				255BC7C42FCC84D290D64470 /* [CP] Check Pods Manifest.lock */,
 				AB185A721F88F73700CE07F7 /* Sources */,
 				AB185A731F88F73700CE07F7 /* Frameworks */,
 				AB185A741F88F73700CE07F7 /* Resources */,
+				AB817A371F898A79001A3D2D /* Embed Frameworks */,
+				29F96A4F0D3B6F79EA0981D8 /* [CP] Embed Pods Frameworks */,
+				0FF5A52F5E695762B5695AD3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				AB817A311F898A79001A3D2D /* PBXTargetDependency */,
 			);
 			name = DivvyDough;
 			productName = DivvyDough;
 			productReference = AB185A761F88F73700CE07F7 /* DivvyDough.app */;
 			productType = "com.apple.product-type.application";
+		};
+		AB817A2A1F898A78001A3D2D /* libDivvyDough */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB817A341F898A79001A3D2D /* Build configuration list for PBXNativeTarget "libDivvyDough" */;
+			buildPhases = (
+				1ECF8790B096532673B51215 /* [CP] Check Pods Manifest.lock */,
+				AB817A261F898A78001A3D2D /* Sources */,
+				AB817A271F898A78001A3D2D /* Frameworks */,
+				AB817A281F898A78001A3D2D /* Headers */,
+				AB817A291F898A78001A3D2D /* Resources */,
+				0197947E7E91837897164E30 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = libDivvyDough;
+			productName = libDivvyDough;
+			productReference = AB817A2B1F898A78001A3D2D /* libDivvyDough.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		AB817A3F1F89D922001A3D2D /* libDivvyDoughTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB817A481F89D922001A3D2D /* Build configuration list for PBXNativeTarget "libDivvyDoughTests" */;
+			buildPhases = (
+				AB817A3C1F89D922001A3D2D /* Sources */,
+				AB817A3D1F89D922001A3D2D /* Frameworks */,
+				AB817A3E1F89D922001A3D2D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AB817A471F89D922001A3D2D /* PBXTargetDependency */,
+				AB817A4C1F89DA44001A3D2D /* PBXTargetDependency */,
+			);
+			name = libDivvyDoughTests;
+			productName = libDivvyDoughTests;
+			productReference = AB817A401F89D922001A3D2D /* libDivvyDoughTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -156,6 +345,16 @@
 					AB185A751F88F73700CE07F7 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+					};
+					AB817A2A1F898A78001A3D2D = {
+						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
+					};
+					AB817A3F1F89D922001A3D2D = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = AB185A751F88F73700CE07F7;
 					};
 				};
 			};
@@ -173,6 +372,8 @@
 			projectRoot = "";
 			targets = (
 				AB185A751F88F73700CE07F7 /* DivvyDough */,
+				AB817A2A1F898A78001A3D2D /* libDivvyDough */,
+				AB817A3F1F89D922001A3D2D /* libDivvyDoughTests */,
 			);
 		};
 /* End PBXProject section */
@@ -191,7 +392,110 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AB817A291F898A78001A3D2D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB817A3E1F89D922001A3D2D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0197947E7E91837897164E30 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-libDivvyDough/Pods-libDivvyDough-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0FF5A52F5E695762B5695AD3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DivvyDough/Pods-DivvyDough-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1ECF8790B096532673B51215 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-libDivvyDough-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		255BC7C42FCC84D290D64470 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DivvyDough-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		29F96A4F0D3B6F79EA0981D8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DivvyDough/Pods-DivvyDough-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DivvyDough/Pods-DivvyDough-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AB185A721F88F73700CE07F7 /* Sources */ = {
@@ -200,8 +504,10 @@
 			files = (
 				AB185A931F8967A300CE07F7 /* TripsOverviewTableViewController.swift in Sources */,
 				AB9F7BAE1F896D7E00775EBB /* UITableViewExtensions.swift in Sources */,
+				AB817A521F89FB9C001A3D2D /* FloatExtensions.swift in Sources */,
 				AB185A7A1F88F73700CE07F7 /* AppDelegate.swift in Sources */,
 				AB185A901F89660A00CE07F7 /* TripsOverviewTableViewCell.swift in Sources */,
+				AB817A501F89FA19001A3D2D /* UIViewControllerExtensions.swift in Sources */,
 				AB9F7BB31F89705A00775EBB /* UserTableViewCell.swift in Sources */,
 				AB9F7BB01F896FF100775EBB /* TripDetailsTableViewController.swift in Sources */,
 				AB9F7BBB1F897E9800775EBB /* TransactionOverviewTableViewCell.swift in Sources */,
@@ -209,7 +515,43 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AB817A261F898A78001A3D2D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB817A391F898A86001A3D2D /* Trip.swift in Sources */,
+				AB817A3B1F89B27F001A3D2D /* Networking.swift in Sources */,
+				AB817A4E1F89F8FC001A3D2D /* Globals.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB817A3C1F89D922001A3D2D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB817A431F89D922001A3D2D /* libDivvyDoughTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AB817A311F898A79001A3D2D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AB817A2A1F898A78001A3D2D /* libDivvyDough */;
+			targetProxy = AB817A301F898A79001A3D2D /* PBXContainerItemProxy */;
+		};
+		AB817A471F89D922001A3D2D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AB817A2A1F898A78001A3D2D /* libDivvyDough */;
+			targetProxy = AB817A461F89D922001A3D2D /* PBXContainerItemProxy */;
+		};
+		AB817A4C1F89DA44001A3D2D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AB185A751F88F73700CE07F7 /* DivvyDough */;
+			targetProxy = AB817A4B1F89DA44001A3D2D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		AB185A7D1F88F73700CE07F7 /* Main.storyboard */ = {
@@ -340,6 +682,7 @@
 		};
 		AB185A891F88F73700CE07F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AEC064B670DFB0260C262EC /* Pods-DivvyDough.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -356,6 +699,7 @@
 		};
 		AB185A8A1F88F73700CE07F7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4AC838D49080BCED5BA65BF /* Pods-DivvyDough.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -367,6 +711,91 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AB817A351F898A79001A3D2D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1333A0AE0D47139D84D7452 /* Pods-libDivvyDough.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 449QPF5U38;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = libDivvyDough/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.jonathanchan.libDivvyDough;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AB817A361F898A79001A3D2D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0EC4828E8D70BEFD5EC4F035 /* Pods-libDivvyDough.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 449QPF5U38;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = libDivvyDough/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.jonathanchan.libDivvyDough;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		AB817A491F89D922001A3D2D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 449QPF5U38;
+				INFOPLIST_FILE = libDivvyDoughTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.jonathanchan.libDivvyDoughTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DivvyDough.app/DivvyDough";
+			};
+			name = Debug;
+		};
+		AB817A4A1F89D922001A3D2D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 449QPF5U38;
+				INFOPLIST_FILE = libDivvyDoughTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.jonathanchan.libDivvyDoughTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DivvyDough.app/DivvyDough";
 			};
 			name = Release;
 		};
@@ -387,6 +816,24 @@
 			buildConfigurations = (
 				AB185A891F88F73700CE07F7 /* Debug */,
 				AB185A8A1F88F73700CE07F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB817A341F898A79001A3D2D /* Build configuration list for PBXNativeTarget "libDivvyDough" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB817A351F898A79001A3D2D /* Debug */,
+				AB817A361F898A79001A3D2D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB817A481F89D922001A3D2D /* Build configuration list for PBXNativeTarget "libDivvyDoughTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB817A491F89D922001A3D2D /* Debug */,
+				AB817A4A1F89D922001A3D2D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import libDivvyDough
 
 class TripsOverviewTableViewController: UITableViewController {
+
+    var trips = [Trip]()
+
+    var pastTrips = [Trip]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,10 +25,23 @@ class TripsOverviewTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
 
         tableView.register(UINib(nibName: "TripsOverviewTableViewCell", bundle: nil), forCellReuseIdentifier: "TripsOverviewTableViewCell")
+        refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: #selector(refreshControlDidChangeValue), for: .valueChanged)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         tableView.deselectSelectedRow(animated: animated)
+
+        if trips.isEmpty {
+            refreshControl?.beginRefreshing()
+            if #available(iOS 11.0, *) {
+                self.tableView.setContentOffset(CGPoint(x: 0, y: -self.tableView.adjustedContentInset.top - refreshControl!.frame.height), animated: false)
+            } else {
+                // Fallback on earlier versions
+                self.tableView.setContentOffset(CGPoint(x: 0, y: self.tableView.contentOffset.y - refreshControl!.frame.height), animated: false)
+            }
+            refreshControlDidChangeValue()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,9 +60,9 @@ class TripsOverviewTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         switch section {
         case 0:
-            return 1
+            return trips.count
         default:
-            return 10
+            return pastTrips.count
         }
     }
 
@@ -60,15 +78,51 @@ class TripsOverviewTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TripsOverviewTableViewCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TripsOverviewTableViewCell", for: indexPath) as! TripsOverviewTableViewCell
 
         // Configure the cell...
+        switch indexPath.section {
+        case 0:
+            configure(cell: cell, for: trips[indexPath.row])
+        default:
+            configure(cell: cell, for: pastTrips[indexPath.row])
+        }
 
         return cell
     }
 
+    func configure(cell: TripsOverviewTableViewCell, for trip: Trip) {
+        cell.tripNameLabel.text = trip.name
+        cell.groupMembersLabel.text = "With \(trip.leader)\(trip.memberNames.count > 1 ? " & \(trip.memberNames.count - 1) others" : "")"
+        cell.dateRangeLabel.text = "\(trip.startDate) – \(trip.endDate)"
+        cell.balanceLabel.text = "$\(trip.balance.inCents)"
+    }
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "ShowTripDetails", sender: self)
+    }
+
+    @objc func refreshControlDidChangeValue() {
+        getAllTrips(currentUserId: currentUserId) { [unowned self] trips, pastTrips, error in
+            guard error == nil else {
+                DispatchQueue.main.async {
+                    self.presentAlert(message: "Unable to fetch trips!")
+                    self.refreshControl?.endRefreshing()
+                }
+                return
+            }
+            if let trips = trips {
+                self.trips = trips
+            }
+            if let pastTrips = pastTrips {
+                self.pastTrips = pastTrips
+            }
+
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                self.refreshControl?.endRefreshing()
+            }
+        }
     }
 
     /*

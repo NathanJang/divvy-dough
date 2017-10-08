@@ -1,0 +1,15 @@
+{
+	"trips": [{
+		"id": 1, // trip id
+		"trip_name": "",
+		"members": [], // first is leader
+		"balance": 0, // current user's balance remaining. if trip leader, it's the total amount that everyone pitched in.
+		"amount_spent": 200.34, // the amount that the user already spent on this trip. if trip leader, it's the total amount spent through this app.
+		"start_date": "",
+		"end_date": ""
+	}],
+
+	"past_trips": [
+		// ...
+	]
+}

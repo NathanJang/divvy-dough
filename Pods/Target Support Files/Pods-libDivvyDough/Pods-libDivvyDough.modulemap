@@ -1,0 +1,6 @@
+framework module Pods_libDivvyDough {
+  umbrella header "Pods-libDivvyDough-umbrella.h"
+
+  export *
+  module * { export * }
+}
