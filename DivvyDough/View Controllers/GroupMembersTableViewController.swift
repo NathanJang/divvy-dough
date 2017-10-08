@@ -83,7 +83,7 @@ class GroupMembersTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell", for: indexPath) as! UserTableViewCell
 
         // Configure the cell...
-        cell.nameLabel.text = "\(balances[indexPath.row].0)\(indexPath.row == 0 ? " (Leader)" : "")"
+        cell.nameLabel.text = "\(balances[indexPath.row].0)\(indexPath.row == 0 ? " (Leader 👑)" : "")"
         cell.balanceLabel.text = isLeader ? balances[indexPath.row].1.asDollars : ""
 
         return cell

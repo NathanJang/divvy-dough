@@ -8,5 +8,5 @@
 
 import Foundation
 
-public var currentUserId = 1
+public var currentUserId: Int { return isLeader ? 1 : 4 }
 public var isLeader = false

@@ -1,5 +1,5 @@
 //
-//  SettingsTableViewController.swift
+//  NewChargeTableViewController.swift
 //  DivvyDough
 //
 //  Created by Jonathan Chan on 2017-10-08.
@@ -9,11 +9,13 @@
 import UIKit
 import libDivvyDough
 
-class SettingsTableViewController: UITableViewController {
+class NewChargeTableViewController: UITableViewController {
 
-    @IBOutlet weak var apiEndpointTextField: UITextField!
-    @IBOutlet weak var isLeaderSwitch: UISwitch!
-    @IBOutlet weak var currentUserIdTextField: UITextField!
+    @IBOutlet weak var descriptionTextField: UITextField!
+    @IBOutlet weak var amountTextField: UITextField!
+    @IBOutlet weak var confirmationLabel: UILabel!
+
+    var selectedTrip: Trip!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,16 +25,13 @@ class SettingsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        apiEndpointTextField.text = rootEndpoint
-        isLeaderSwitch.isOn = isLeader
-//        currentUserIdTextField.text = String(currentUserId)
 
-        apiEndpointTextField.addTarget(self, action: #selector(apiEndpointTextFieldDidChange), for: .editingChanged)
-        isLeaderSwitch.addTarget(self, action: #selector(isLeaderSwitchDidChange), for: .valueChanged)
-//        currentUserIdTextField.addTarget(self, action: #selector(currentUserIdTextFieldDidChange), for: .editingChanged)
+        navigationItem.leftBarButtonItem?.target = self
+        navigationItem.leftBarButtonItem?.action = #selector(didTapCancelButton)
 
-        apiEndpointTextField.delegate = self
-        currentUserIdTextField.delegate = self
+        amountTextField.addTarget(self, action: #selector(amountTextFieldDidChange), for: .editingChanged)
+
+        confirmationLabel.textColor = view.tintColor
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,27 +39,39 @@ class SettingsTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @objc func apiEndpointTextFieldDidChange() {
-        setRootEndpoint(apiEndpointTextField.text!)
+    @objc func didTapCancelButton() {
+        navigationController?.dismiss(animated: true, completion: nil)
     }
 
-    @objc func isLeaderSwitchDidChange() {
-        isLeader = isLeaderSwitch.isOn
+    @objc func amountTextFieldDidChange() {
+        if let text = amountTextField.text, let float = Float(text) {
+            confirmationLabel.text = "Charge each person \((float / Float(selectedTrip.memberNames.count)).asDollars)"
+        } else {
+            confirmationLabel.text = "Charge each person $0.00"
+        }
     }
 
-//    @objc func currentUserIdTextFieldDidChange() {
-//        if let text = currentUserIdTextField.text, let int = Int(text) {
-//            currentUserId = int
-//        }
-//    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath == IndexPath(row: 0, section: 1) {
+            tableView.deselectRow(at: indexPath, animated: true)
+            leaderCharge(tripId: selectedTrip.id, description: descriptionTextField.text!, amount: Float(amountTextField.text!)! / Float(selectedTrip.memberNames.count)) { [unowned self] error in
+                guard error == nil else {
+                    DispatchQueue.main.async { [unowned self] in
+                        self.presentAlert(message: "Could not charge.")
+                    }
+                    return
+                }
 
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 44
+                DispatchQueue.main.async { [unowned self] in
+                    self.navigationController?.dismiss(animated: true, completion: nil)
+                }
+            }
+        }
     }
 
-    /*
     // MARK: - Table view data source
 
+    /*
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 0
@@ -126,14 +137,5 @@ class SettingsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
-}
-
-extension SettingsTableViewController: UITextFieldDelegate {
-
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
 
 }

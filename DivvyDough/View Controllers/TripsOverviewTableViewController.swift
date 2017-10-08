@@ -87,17 +87,18 @@ class TripsOverviewTableViewController: UITableViewController {
         case 0:
             configure(cell: cell, for: trips[indexPath.row])
         default:
-            configure(cell: cell, for: pastTrips[indexPath.row])
+            configure(cell: cell, for: pastTrips[indexPath.row], displayBalance: false)
         }
 
         return cell
     }
 
-    func configure(cell: TripsOverviewTableViewCell, for trip: Trip) {
+    func configure(cell: TripsOverviewTableViewCell, for trip: Trip, displayBalance: Bool = true) {
         cell.tripNameLabel.text = trip.name
         cell.groupMembersLabel.text = "With \(trip.leader)\(trip.memberNames.count > 1 ? " & \(trip.memberNames.count - 1) others" : "")"
         cell.dateRangeLabel.text = "\(trip.startDate) – \(trip.endDate)"
-        cell.balanceLabel.text = trip.balance > 0 ? trip.balance.asDollars : ""
+        cell.balanceLabel.text = displayBalance ? trip.balance.asDollars : ""
+        cell.balanceLabel.textColor = trip.balance > 0 ? #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1) : .red
     }
 
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {

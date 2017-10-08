@@ -31,9 +31,11 @@ class TripDetailsTableViewController: UITableViewController {
         tableView.register(UINib(nibName: "UserTableViewCell", bundle: nil), forCellReuseIdentifier: "UserTableViewCell")
         tableView.register(UINib(nibName: "TransactionOverviewTableViewCell", bundle: nil), forCellReuseIdentifier: "TransactionOverviewTableViewCell")
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Others", style: .plain, target: self, action: #selector(didTapDetailsButton))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Members", style: .plain, target: self, action: #selector(didTapDetailsButton))
 
         selectedTrip = (navigationController?.viewControllers.first as? TripsOverviewTableViewController)?.selectedTrip!
+
+        title = selectedTrip.name
 
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: #selector(refreshControlDidChangeValue), for: .valueChanged)
@@ -69,7 +71,7 @@ class TripDetailsTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         switch section {
         case 0:
-            return 1
+            return isLeader ? 2 : 1
         default:
             return transactions.count
         }
@@ -79,9 +81,17 @@ class TripDetailsTableViewController: UITableViewController {
         var cell: UITableViewCell?
         switch indexPath.section {
         case 0:
-            let userCell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell", for: indexPath) as! UserTableViewCell
-            userCell.balanceLabel.text = selectedTrip.balance.asDollars
-            cell = userCell
+            if indexPath.row == 0 {
+                let userCell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell", for: indexPath) as! UserTableViewCell
+                userCell.balanceLabel.text = selectedTrip.balance.asDollars
+                userCell.iconImageView.image = (isLeader ? #imageLiteral(resourceName: "GroupIcon") : #imageLiteral(resourceName: "UserIcon")).withRenderingMode(.alwaysTemplate)
+                userCell.nameLabel.text = isLeader ? "Total Deposited" : "Me"
+                cell = userCell
+            } else {
+                cell = UITableViewCell(style: .default, reuseIdentifier: nil)
+                cell?.textLabel?.text = "Add a Charge"
+                cell?.accessoryType = .disclosureIndicator
+            }
 
         default:
             let transactionCell = tableView.dequeueReusableCell(withIdentifier: "TransactionOverviewTableViewCell", for: indexPath) as! TransactionOverviewTableViewCell
@@ -112,26 +122,50 @@ class TripDetailsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
-            return 100
+            return indexPath.row == 0 ? 100 : 44
         default:
             return 66
         }
     }
 
     @objc func refreshControlDidChangeValue() {
-        getTransactions(tripId: selectedTrip.id, userId: currentUserId) { [unowned self] transactions, error in
-            guard error == nil else {
+        if isLeader {
+            getLeaderTransactions(tripId: selectedTrip.id) { [unowned self] transactions, error in
+                guard error == nil else {
+                    DispatchQueue.main.async { [unowned self] in
+                        self.presentAlert(message: "Unable to fetch transactions.")
+                        self.refreshControl?.endRefreshing()
+                    }
+                    return
+                }
+                self.transactions = transactions ?? []
                 DispatchQueue.main.async { [unowned self] in
-                    self.presentAlert(message: "Unable to fetch transactions.")
+                    self.tableView.reloadData()
                     self.refreshControl?.endRefreshing()
                 }
-                return
             }
-            self.transactions = transactions ?? []
-            DispatchQueue.main.async { [unowned self] in
-                self.tableView.reloadData()
-                self.refreshControl?.endRefreshing()
+        } else {
+            getTransactions(tripId: selectedTrip.id, userId: currentUserId) { [unowned self] transactions, error in
+                guard error == nil else {
+                    DispatchQueue.main.async { [unowned self] in
+                        self.presentAlert(message: "Unable to fetch transactions.")
+                        self.refreshControl?.endRefreshing()
+                    }
+                    return
+                }
+                self.transactions = transactions ?? []
+                DispatchQueue.main.async { [unowned self] in
+                    self.tableView.reloadData()
+                    self.refreshControl?.endRefreshing()
+                }
             }
+        }
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath == IndexPath(row: 1, section: 0) {
+            tableView.deselectRow(at: indexPath, animated: true)
+            performSegue(withIdentifier: "ShowNewChargeModal", sender: self)
         }
     }
 
@@ -174,14 +208,15 @@ class TripDetailsTableViewController: UITableViewController {
         performSegue(withIdentifier: "ShowGroupMembers", sender: self)
     }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "ShowNewChargeModal", let newChargeViewController = (segue.destination as? UINavigationController)?.topViewController as? NewChargeTableViewController {
+            newChargeViewController.selectedTrip = selectedTrip
+        }
     }
-    */
 
 }

@@ -18,7 +18,7 @@ public func setRootEndpoint(_ root: String) {
 
 struct Endpoints {
 
-    static var root = "http://10.142.8.100:3000/router"
+    static var root = "https://divvydough.localtunnel.me/router"
 
     static var ping: String { return "\(root)/ping" }
 
@@ -33,6 +33,8 @@ struct Endpoints {
         static func transactions(tripId: Int) -> String { return "\(root)/trips/\(tripId)/leader/transactions" }
 
         static func balances(tripId: Int) -> String { return "\(root)/trips/\(tripId)/leader/balance" }
+
+        static func charge(tripId: Int) -> String { return "\(root)/trips/\(tripId)/leader/charge" }
 
     }
 
@@ -154,6 +156,16 @@ public func deposit(tripId: Int, userId: Int, amount: Float, completionHandler: 
 public func withdraw(tripId: Int, userId: Int, amount: Float, completionHandler: @escaping ((_ error: LibDivvyDoughError?) -> Void)) {
     request(Endpoints.withdraw(tripId: tripId), method: .post, parameters: [
         "user_id": userId,
+        "amount": amount
+    ], encoding: URLEncoding.httpBody, headers: nil).responseJSON { response in
+        guard response.result.isSuccess else { return completionHandler(.networkError) }
+        completionHandler(nil)
+    }
+}
+
+public func leaderCharge(tripId: Int, description: String, amount: Float, completionHandler: @escaping ((_ error: LibDivvyDoughError?) -> Void)) {
+    request(Endpoints.Leader.charge(tripId: tripId), method: .post, parameters: [
+        "name": description,
         "amount": amount
     ], encoding: URLEncoding.httpBody, headers: nil).responseJSON { response in
         guard response.result.isSuccess else { return completionHandler(.networkError) }

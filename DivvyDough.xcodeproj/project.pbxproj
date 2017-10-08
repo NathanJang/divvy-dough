@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8929EBD61062967AD2B2C938 /* Pods_libDivvyDough.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 537F049218CE85FBE36CB8D9 /* Pods_libDivvyDough.framework */; };
+		AB0264771F8A1C0F0071D4BC /* NewChargeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0264761F8A1C0F0071D4BC /* NewChargeTableViewController.swift */; };
 		AB185A7A1F88F73700CE07F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB185A791F88F73700CE07F7 /* AppDelegate.swift */; };
 		AB185A7F1F88F73700CE07F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB185A7D1F88F73700CE07F7 /* Main.storyboard */; };
 		AB185A811F88F73700CE07F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB185A801F88F73700CE07F7 /* Assets.xcassets */; };
@@ -79,6 +80,7 @@
 		328BB682D43D6FD6F1F1F169 /* Pods_DivvyDough.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DivvyDough.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AEC064B670DFB0260C262EC /* Pods-DivvyDough.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DivvyDough.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DivvyDough/Pods-DivvyDough.debug.xcconfig"; sourceTree = "<group>"; };
 		537F049218CE85FBE36CB8D9 /* Pods_libDivvyDough.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_libDivvyDough.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB0264761F8A1C0F0071D4BC /* NewChargeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewChargeTableViewController.swift; sourceTree = "<group>"; };
 		AB185A761F88F73700CE07F7 /* DivvyDough.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DivvyDough.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB185A791F88F73700CE07F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB185A7E1F88F73700CE07F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				AB9F7BAF1F896FF100775EBB /* TripDetailsTableViewController.swift */,
 				AB9F7BBD1F89873C00775EBB /* GroupMembersTableViewController.swift */,
 				AB817A531F8A0EE1001A3D2D /* SettingsTableViewController.swift */,
+				AB0264761F8A1C0F0071D4BC /* NewChargeTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -505,6 +508,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB0264771F8A1C0F0071D4BC /* NewChargeTableViewController.swift in Sources */,
 				AB185A931F8967A300CE07F7 /* TripsOverviewTableViewController.swift in Sources */,
 				AB9F7BAE1F896D7E00775EBB /* UITableViewExtensions.swift in Sources */,
 				AB817A521F89FB9C001A3D2D /* FloatExtensions.swift in Sources */,
