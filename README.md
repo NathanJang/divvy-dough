@@ -1,6 +1,6 @@
 # DivvyDough
 
-![](DivvyDough/Assets.xcassets/AppIcon.appiconset/DivvyDoughIcon copy.png)
+![](DivvyDough/Assets.xcassets/AppIcon.appiconset/DivvyDoughIcon%20copy.png)
 
 ## Inspiration
 Let's say you're travelling with a group of friends.
