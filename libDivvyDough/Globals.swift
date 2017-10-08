@@ -9,3 +9,4 @@
 import Foundation
 
 public var currentUserId = 1
+public var isLeader = false

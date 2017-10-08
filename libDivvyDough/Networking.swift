@@ -10,6 +10,8 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+public var rootEndpoint: String { return Endpoints.root }
+
 public func setRootEndpoint(_ root: String) {
     Endpoints.root = root
 }
@@ -123,16 +125,16 @@ public func getLeaderTransactions(tripId: Int, completionHandler: @escaping ((_ 
     }
 }
 
-public func getLeaderBalances(tripId: Int, completionHandler: @escaping ((_ balances: [String : Float]?, _ error: LibDivvyDoughError?) -> Void)) {
+public func getLeaderBalances(tripId: Int, completionHandler: @escaping ((_ balances: [(String, Float)]?, _ error: LibDivvyDoughError?) -> Void)) {
     request(Endpoints.Leader.balances(tripId: tripId)).responseJSON { response in
         guard let rawResult = response.result.value else { return completionHandler(nil, .networkError) }
 
-        let balancesJson = JSON(rawResult)
+        guard let balancesJson = JSON(rawResult)["list"].array else { return completionHandler(nil, .parseError) }
 
-        var balances = [String : Float]()
+        var balances = [(String, Float)]()
         for pair in balancesJson {
-            guard let value = pair.1.float else { return completionHandler(nil, .parseError) }
-            balances[pair.0] = value
+            guard let name = pair["name"].string, let balance = pair["balance"].float else { return completionHandler(nil, .parseError) }
+            balances.append((name, balance))
         }
 
         completionHandler(balances, nil)

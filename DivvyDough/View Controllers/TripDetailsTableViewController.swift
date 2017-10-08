@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import libDivvyDough
 
 class TripDetailsTableViewController: UITableViewController {
+
+    var selectedTrip: Trip!
+
+    var transactions = [Trip.Transaction]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +32,25 @@ class TripDetailsTableViewController: UITableViewController {
         tableView.register(UINib(nibName: "TransactionOverviewTableViewCell", bundle: nil), forCellReuseIdentifier: "TransactionOverviewTableViewCell")
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Others", style: .plain, target: self, action: #selector(didTapDetailsButton))
+
+        selectedTrip = (navigationController?.viewControllers.first as? TripsOverviewTableViewController)?.selectedTrip!
+
+        refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: #selector(refreshControlDidChangeValue), for: .valueChanged)
+
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        if transactions.isEmpty {
+            refreshControl?.beginRefreshing()
+            if #available(iOS 11.0, *) {
+                self.tableView.setContentOffset(CGPoint(x: 0, y: -self.tableView.adjustedContentInset.top - refreshControl!.frame.height), animated: false)
+            } else {
+                // Fallback on earlier versions
+                self.tableView.setContentOffset(CGPoint(x: 0, y: self.tableView.contentOffset.y - refreshControl!.frame.height), animated: false)
+            }
+            refreshControlDidChangeValue()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,7 +71,7 @@ class TripDetailsTableViewController: UITableViewController {
         case 0:
             return 1
         default:
-            return 20
+            return transactions.count
         }
     }
 
@@ -55,14 +79,34 @@ class TripDetailsTableViewController: UITableViewController {
         var cell: UITableViewCell?
         switch indexPath.section {
         case 0:
-            cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell", for: indexPath)
+            let userCell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell", for: indexPath) as! UserTableViewCell
+            userCell.balanceLabel.text = selectedTrip.balance.asDollars
+            cell = userCell
+
         default:
-            cell = tableView.dequeueReusableCell(withIdentifier: "TransactionOverviewTableViewCell", for: indexPath)
+            let transactionCell = tableView.dequeueReusableCell(withIdentifier: "TransactionOverviewTableViewCell", for: indexPath) as! TransactionOverviewTableViewCell
+            configure(transactionCell: transactionCell, for: transactions[indexPath.row])
+            cell = transactionCell
         }
 
         // Configure the cell...
 
         return cell!
+    }
+
+    func configure(transactionCell: TransactionOverviewTableViewCell, for transaction: Trip.Transaction) {
+        transactionCell.transactionNameLabel.text = transaction.name
+        transactionCell.transactionTimeLabel.text = transaction.timestamp
+        transactionCell.transactionAmountLabel.text = transaction.amount.asDollars
+    }
+
+    override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        switch section {
+        case 1:
+            return transactions.isEmpty ? "No transactions." : ""
+        default:
+            return ""
+        }
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -71,6 +115,23 @@ class TripDetailsTableViewController: UITableViewController {
             return 100
         default:
             return 66
+        }
+    }
+
+    @objc func refreshControlDidChangeValue() {
+        getTransactions(tripId: selectedTrip.id, userId: currentUserId) { [unowned self] transactions, error in
+            guard error == nil else {
+                DispatchQueue.main.async { [unowned self] in
+                    self.presentAlert(message: "Unable to fetch transactions.")
+                    self.refreshControl?.endRefreshing()
+                }
+                return
+            }
+            self.transactions = transactions ?? []
+            DispatchQueue.main.async { [unowned self] in
+                self.tableView.reloadData()
+                self.refreshControl?.endRefreshing()
+            }
         }
     }
 

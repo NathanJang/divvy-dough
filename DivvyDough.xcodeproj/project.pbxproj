@@ -25,6 +25,7 @@
 		AB817A4E1F89F8FC001A3D2D /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB817A4D1F89F8FC001A3D2D /* Globals.swift */; };
 		AB817A501F89FA19001A3D2D /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB817A4F1F89FA19001A3D2D /* UIViewControllerExtensions.swift */; };
 		AB817A521F89FB9C001A3D2D /* FloatExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB817A511F89FB9C001A3D2D /* FloatExtensions.swift */; };
+		AB817A541F8A0EE1001A3D2D /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB817A531F8A0EE1001A3D2D /* SettingsTableViewController.swift */; };
 		AB9F7BAE1F896D7E00775EBB /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9F7BAD1F896D7E00775EBB /* UITableViewExtensions.swift */; };
 		AB9F7BB01F896FF100775EBB /* TripDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9F7BAF1F896FF100775EBB /* TripDetailsTableViewController.swift */; };
 		AB9F7BB31F89705A00775EBB /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9F7BB11F89705A00775EBB /* UserTableViewCell.swift */; };
@@ -98,6 +99,7 @@
 		AB817A4D1F89F8FC001A3D2D /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		AB817A4F1F89FA19001A3D2D /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		AB817A511F89FB9C001A3D2D /* FloatExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatExtensions.swift; sourceTree = "<group>"; };
+		AB817A531F8A0EE1001A3D2D /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		AB9F7BAD1F896D7E00775EBB /* UITableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
 		AB9F7BAF1F896FF100775EBB /* TripDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailsTableViewController.swift; sourceTree = "<group>"; };
 		AB9F7BB11F89705A00775EBB /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				AB185A921F8967A300CE07F7 /* TripsOverviewTableViewController.swift */,
 				AB9F7BAF1F896FF100775EBB /* TripDetailsTableViewController.swift */,
 				AB9F7BBD1F89873C00775EBB /* GroupMembersTableViewController.swift */,
+				AB817A531F8A0EE1001A3D2D /* SettingsTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -505,6 +508,7 @@
 				AB185A931F8967A300CE07F7 /* TripsOverviewTableViewController.swift in Sources */,
 				AB9F7BAE1F896D7E00775EBB /* UITableViewExtensions.swift in Sources */,
 				AB817A521F89FB9C001A3D2D /* FloatExtensions.swift in Sources */,
+				AB817A541F8A0EE1001A3D2D /* SettingsTableViewController.swift in Sources */,
 				AB185A7A1F88F73700CE07F7 /* AppDelegate.swift in Sources */,
 				AB185A901F89660A00CE07F7 /* TripsOverviewTableViewCell.swift in Sources */,
 				AB817A501F89FA19001A3D2D /* UIViewControllerExtensions.swift in Sources */,

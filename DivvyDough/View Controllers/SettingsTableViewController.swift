@@ -1,19 +1,18 @@
 //
-//  GroupMembersTableViewController.swift
+//  SettingsTableViewController.swift
 //  DivvyDough
 //
-//  Created by Jonathan Chan on 2017-10-07.
+//  Created by Jonathan Chan on 2017-10-08.
 //  Copyright © 2017 Jonathan Chan. All rights reserved.
 //
 
 import UIKit
 import libDivvyDough
 
-class GroupMembersTableViewController: UITableViewController {
+class SettingsTableViewController: UITableViewController {
 
-    var balances = [(String, Float)]()
-
-    var selectedTrip: Trip!
+    @IBOutlet weak var apiEndpointTextField: UITextField!
+    @IBOutlet weak var isLeaderSwitch: UISwitch!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,43 +22,11 @@ class GroupMembersTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        apiEndpointTextField.text = rootEndpoint
+        isLeaderSwitch.isOn = isLeader
 
-        tableView.register(UINib(nibName: "UserTableViewCell", bundle: nil), forCellReuseIdentifier: "UserTableViewCell")
-
-        refreshControl = UIRefreshControl()
-        refreshControl?.addTarget(self, action: #selector(refreshControlDidChangeValue), for: .valueChanged)
-
-        selectedTrip = (navigationController?.viewControllers.first as? TripsOverviewTableViewController)?.selectedTrip!
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        if balances.isEmpty {
-            refreshControl?.beginRefreshing()
-            if #available(iOS 11.0, *) {
-                self.tableView.setContentOffset(CGPoint(x: 0, y: -self.tableView.adjustedContentInset.top - refreshControl!.frame.height), animated: false)
-            } else {
-                // Fallback on earlier versions
-                self.tableView.setContentOffset(CGPoint(x: 0, y: self.tableView.contentOffset.y - refreshControl!.frame.height), animated: false)
-            }
-            refreshControlDidChangeValue()
-        }
-    }
-
-    @objc func refreshControlDidChangeValue() {
-        getLeaderBalances(tripId: selectedTrip.id) { [unowned self] balances, error in
-            guard error == nil else {
-                DispatchQueue.main.async { [unowned self] in
-                    self.presentAlert(message: "Unable to fetch members.")
-                    self.refreshControl?.endRefreshing()
-                }
-                return
-            }
-            self.balances = balances ?? []
-            DispatchQueue.main.async { [unowned self] in
-                self.tableView.reloadData()
-                self.refreshControl?.endRefreshing()
-            }
-        }
+        apiEndpointTextField.addTarget(self, action: #selector(apiEndpointTextFieldDidChange), for: .valueChanged)
+        isLeaderSwitch.addTarget(self, action: #selector(isLeaderSwitchDidChange), for: .valueChanged)
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,35 +34,41 @@ class GroupMembersTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @objc func apiEndpointTextFieldDidChange() {
+        setRootEndpoint(apiEndpointTextField.text!)
+    }
+
+    @objc func isLeaderSwitchDidChange() {
+        isLeader = isLeaderSwitch.isOn
+    }
+
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44
+    }
+
+    /*
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return balances.count
+        return 0
     }
+     */
 
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell", for: indexPath) as! UserTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
         // Configure the cell...
-        cell.nameLabel.text = "\(balances[indexPath.row].0)\(indexPath.row == 0 ? " (Leader)" : "")"
-        cell.balanceLabel.text = isLeader ? balances[indexPath.row].1.asDollars : ""
 
         return cell
     }
-
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-    }
-
-    override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        return balances.isEmpty ? "No members to show." : ""
-    }
+    */
 
     /*
     // Override to support conditional editing of the table view.

@@ -15,6 +15,8 @@ class TripsOverviewTableViewController: UITableViewController {
 
     var pastTrips = [Trip]()
 
+    var selectedTrip: Trip?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -95,17 +97,32 @@ class TripsOverviewTableViewController: UITableViewController {
         cell.tripNameLabel.text = trip.name
         cell.groupMembersLabel.text = "With \(trip.leader)\(trip.memberNames.count > 1 ? " & \(trip.memberNames.count - 1) others" : "")"
         cell.dateRangeLabel.text = "\(trip.startDate) – \(trip.endDate)"
-        cell.balanceLabel.text = "$\(trip.balance.inCents)"
+        cell.balanceLabel.text = trip.balance > 0 ? trip.balance.asDollars : ""
+    }
+
+    override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return trips.isEmpty ? "No trips." : ""
+        default:
+            return pastTrips.isEmpty ? "No past trips." : ""
+        }
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 0:
+            selectedTrip = trips[indexPath.row]
+        default:
+            selectedTrip = pastTrips[indexPath.row]
+        }
         performSegue(withIdentifier: "ShowTripDetails", sender: self)
     }
 
     @objc func refreshControlDidChangeValue() {
         getAllTrips(currentUserId: currentUserId) { [unowned self] trips, pastTrips, error in
             guard error == nil else {
-                DispatchQueue.main.async {
+                DispatchQueue.main.async { [unowned self] in
                     self.presentAlert(message: "Unable to fetch trips!")
                     self.refreshControl?.endRefreshing()
                 }
@@ -118,7 +135,7 @@ class TripsOverviewTableViewController: UITableViewController {
                 self.pastTrips = pastTrips
             }
 
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [unowned self] in
                 self.tableView.reloadData()
                 self.refreshControl?.endRefreshing()
             }

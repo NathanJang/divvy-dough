@@ -10,6 +10,6 @@ import Foundation
 
 extension Float {
 
-    var inCents: String { return String(format: "%.2f", self) }
+    var asDollars: String { return String(format: "\(self < 0 ? "-" : "")$%.2f", abs(self)) }
 
 }
